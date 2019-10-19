@@ -57,9 +57,11 @@ struct semphore
 void initerror() 
 {
 	errormsg[0] = (char *) malloc(20);
-	errormsg[0] = "Error command!";
+	strcpy(errormsg[0], "Error command!");
+	// errormsg[0] = "Error command!";
 	errormsg[1] = (char *) malloc(20);
-	errormsg[1] = "Error parameter!";
+	// errormsg[1] = "Error parameter!";
+	strcpy(errormsg[1], "Error parameter!");
 }
 
 // 获取子字符串
