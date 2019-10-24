@@ -198,12 +198,8 @@ void showdetail()
 	printf("\n");
 }
 
-int main(int argc, char const *argv[])
-{
-	initerror();
-	short cflag, pflag;
-	char cmdstr[32];
-
+// 初始化根节点
+void initprocess() {
 	proot = new pnode;
 	proot->node = new pcb;
 	proot->node->pid = 0;
@@ -214,6 +210,12 @@ int main(int argc, char const *argv[])
 	proot->brother = NULL;
 
 	plink = proot;
+}
+
+// 命令控制台
+void processterminal() {
+	short cflag, pflag;
+	char cmdstr[32];
 
 	while(1)
 	{
@@ -239,10 +241,14 @@ int main(int argc, char const *argv[])
 		{
 			cflag = 1;
 			pflag = 1;
+			printf("\n=================================================\n");
+			printf("pid: 当前进程ID  ppid: 父进程ID  prio: 进程优先级\n");
 			printf("创建新进程: createpc(pid,ppid,prio)\n");
 			printf("撤销进程: deletepc(pid)\n");
+			printf("查看当前进程信息: showdetail\n");
 			printf("获取帮助: help\n");
 			printf("退出: exit\n");
+			printf("=================================================\n\n");
 		}
 
 		// 创建新进程，判断createpc是否为cmdstr字串
@@ -291,7 +297,16 @@ int main(int argc, char const *argv[])
 		if (!pflag)
 			geterror(1);
 	}
+}
+
+
+int main(int argc, char const *argv[])
+{
+	initerror();
+
+	initprocess();
+
+	processterminal();
 
 	return 0;
-
 }
