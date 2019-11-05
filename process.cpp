@@ -104,7 +104,6 @@ int deletepc(int *para)
 
 	/**
 	 * p: 工作指针
-	 * plink_previous: 要撤销的进程在进程链表中的前一个节点
 	 * ptree_previous: 要撤销的进程在进程树中的前一个节点
 	 * tbd: 要撤销的进程节点
 	 * pflag: 记录要撤销的进程是否查找成功

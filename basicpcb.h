@@ -38,9 +38,9 @@ struct pnode
 };
 
 // 信号量机制
-struct semphore
+struct semaphore
 {
-	// 进程名称
+	// 信号量资源名称
 	char name[5];
 	// 计数值
 	int count;
