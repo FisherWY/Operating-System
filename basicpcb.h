@@ -21,7 +21,7 @@ struct pcb
 	// 上次运行时间
 	int lasttime;
 	// 进程运行总时间
-	int tottime;
+	int totaltime;
 };
 
 // 进程在广义二叉树或者进程链表的节点结构
